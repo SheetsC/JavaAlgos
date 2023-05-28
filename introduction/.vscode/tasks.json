@@ -1,0 +1,21 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+      {
+        "label": "Build with algs4.jar",
+        "type": "shell",
+        "command": "javac -cp .:algs4.jar ${file} && java -cp .:algs4.jar ${fileBasenameNoExtension}",
+        "group": {
+          "kind": "build",
+          "isDefault": true
+        }
+      }
+    ]
+  }
+
+  
+  
+  
+  
+  
+  
