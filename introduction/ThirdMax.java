@@ -1,24 +1,27 @@
-package introduction;
-
 class Solution {
-    public int thirdMax(int[] nums){
+    public int thirdMax(int[] nums) {
+        Integer max1 = null;
+        Integer max2 = null;
+        Integer max3 = null;
 
-        int max1 = Math.max(nums[0], nums[1]);
-        int max2 = Math.min(nums[0], nums[1]);
-        int max3 = Integer.MIN_VALUE;
-        for (int i = 2; i < nums.length; i ++){
-            if (nums[i] > max1){
-                max3 = max2;
-                max2 = max1;
-                max1 = nums[i];
-            } else if (nums[i] > max2){
-                max3= max2;
-                max2 = nums[i];
-            }else if (nums[i] > max3){
-                max3 = nums[i];
+        for (Integer num : nums) {
+            if (num.equals(max1) || num.equals(max2) || num.equals(max3)) {
+                continue; // Skip duplicates
             }
 
+            if (max1 == null || num > max1) {
+                max3 = max2;
+                max2 = max1;
+                max1 = num;
+            } else if (max2 == null || num > max2) {
+                max3 = max2;
+                max2 = num;
+            } else if (max3 == null || num > max3) {
+                max3 = num;
+            }
         }
-        return max3 != Integer.MIN_VALUE ? max1: max3;
+
+        return max3 != null ? max3 : max1;
     }
 }
+
