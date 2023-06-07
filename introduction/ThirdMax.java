@@ -19,6 +19,6 @@ class Solution {
             }
 
         }
-        return max3;
+        return max3 != Integer.MIN_VALUE ? max1: max3;
     }
 }
