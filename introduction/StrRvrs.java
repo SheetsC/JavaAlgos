@@ -9,7 +9,7 @@ class Solution  {
                 char temp = chars[l];
                 chars[l] = chars[r];
                 chars[r] = temp;
-                l ++;
+                l++;
                 r--;
             }
         }
